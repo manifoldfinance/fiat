@@ -1,0 +1,13 @@
+3d75604;sam;Tue Nov 10 08:15:17 2020 -0800;release v0.2.0
+9b4ed0e;pldespaigne;Mon Jul 20 09:36:23 2020 +0200;Merge pull request #18 from blockframes/dependabot/npm_and_yarn/lodash-4.17.19
+91f619f;dependabot[bot];Sun Jul 19 09:59:34 2020 +0000;Bump lodash from 4.17.15 to 4.17.19
+fafe3e3;pldespaigne;Mon Jun 8 16:55:28 2020 +0200;Merge pull request #17 from blockframes/dependabot/npm_and_yarn/websocket-extensions-0.1.4
+8d1c4e1;dependabot[bot];Sun Jun 7 18:54:58 2020 +0000;Bump websocket-extensions from 0.1.3 to 0.1.4
+2788e70;pldespaigne;Thu Mar 12 14:15:33 2020 +0100;payment server 🚀
+447b19e;pldespaigne;Wed Mar 11 16:51:42 2020 +0100;receipt big move & other things
+a865adc;pldespaigne;Fri Feb 21 15:34:03 2020 +0100;big update
+5561f70;pldespaigne;Fri Jan 31 23:34:48 2020 +0100;add upload function and comments
+293baeb;pldespaigne;Fri Jan 31 15:35:42 2020 +0100;#3 validating & parsing receipt files into objects
+337c3c0;pldespaigne;Fri Jan 31 15:13:06 2020 +0100;new examples
+adc7d61;pldespaigne;Thu Jan 30 14:41:47 2020 +0100;secret values from env
+3e5c434;pldespaigne;Tue Jan 28 16:27:01 2020 +0100;initial commit

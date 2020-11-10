@@ -1,0 +1,64 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.03">
+  <CstmrCdtTrfInitn>
+    <GrpHdr>
+      <MsgId>AQPD8E1Z3</MsgId>
+      <CreDtTm>2020-02-04T20:58:30</CreDtTm>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>11.1</CtrlSum>
+      <InitgPty>
+        <Nm>Cascade8</Nm>
+      </InitgPty>
+    </GrpHdr>
+    <PmtInf>
+      <PmtInfId>AQPD8E1Z3</PmtInfId>
+      <PmtMtd>TRF</PmtMtd>
+      <BtchBookg>true</BtchBookg>
+      <NbOfTxs>1</NbOfTxs>
+      <CtrlSum>11.1</CtrlSum>
+      <PmtTpInf>
+        <SvcLvl>
+          <Cd>SEPA</Cd>
+        </SvcLvl>
+      </PmtTpInf>
+      <ReqdExctnDt>2020-02-04</ReqdExctnDt>
+      <Dbtr>
+        <Nm>Cascade8</Nm>
+      </Dbtr>
+      <DbtrAcct>
+        <Id>
+          <IBAN>FR7630788001000889066000366</IBAN>
+        </Id>
+      </DbtrAcct>
+      <DbtrAgt>
+        <FinInstnId>
+          <BIC>NSMBFRPPXXX</BIC>
+        </FinInstnId>
+      </DbtrAgt>
+      <ChrgBr>SLEV</ChrgBr>
+      <CdtTrfTxInf>
+        <PmtId>
+          <EndToEndId>AQPD8E1Z3</EndToEndId>
+        </PmtId>
+        <Amt>
+          <InstdAmt Ccy="EUR">11.1</InstdAmt>
+        </Amt>
+        <CdtrAgt>
+          <FinInstnId>
+            <BIC>NSMBFRPPXXX</BIC>
+          </FinInstnId>
+        </CdtrAgt>
+        <Cdtr>
+          <Nm>Pulsar</Nm>
+        </Cdtr>
+        <CdtrAcct>
+          <Id>
+            <IBAN>FR7630788001000889066000463</IBAN>
+          </Id>
+        </CdtrAcct>
+      </CdtTrfTxInf>
+    </PmtInf>
+  </CstmrCdtTrfInitn>
+</Document>
+  

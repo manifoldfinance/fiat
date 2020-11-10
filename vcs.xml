@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+  <directory name=".">
+    <directory name="build">
+      <directory name="ebics">
+        <file name="ebics.js"></file>
+      </directory>
+      <directory name="environment">
+        <file name="env.js"></file>
+        <file name="env.template.js"></file>
+      </directory>
+      <directory name="firestore">
+        <file name="firestore.js"></file>
+      </directory>
+      <directory name="ftps">
+        <file name="ftps.js"></file>
+      </directory>
+      <directory name="payment">
+        <file name="index.js"></file>
+        <file name="payment.js"></file>
+      </directory>
+      <directory name="quorum">
+        <file name="quorum.js"></file>
+      </directory>
+      <directory name="receipt">
+        <file name="index.js"></file>
+        <file name="receipt.js"></file>
+      </directory>
+      <directory name="storage">
+        <file name="storage.js"></file>
+      </directory>
+      <directory name="utils">
+        <file name="utils.js"></file>
+      </directory>
+    </directory>
+    <directory name="docs">
+    </directory>
+    <directory name="ebics-client">
+      <file name="ebics-1.1-SNAPSHOT.jar"></file>
+      <file name="ebics-template.txt"></file>
+      <directory name="lib">
+        <file name="apiguardian-api-1.0.0.jar"></file>
+        <file name="bcprov-jdk16-140.jar"></file>
+        <file name="commons-cli-1.3.1.jar"></file>
+        <file name="commons-codec-1.9.jar"></file>
+        <file name="commons-logging-1.0.4.jar"></file>
+        <file name="gnu-crypto-2.0.1.jar"></file>
+        <file name="httpclient-4.5.2.jar"></file>
+        <file name="httpcore-4.4.4.jar"></file>
+        <file name="jdom-1.1.3.jar"></file>
+        <file name="junit-jupiter-api-5.4.2.jar"></file>
+        <file name="junit-jupiter-engine-5.4.2.jar"></file>
+        <file name="junit-platform-commons-1.4.2.jar"></file>
+        <file name="junit-platform-engine-1.4.2.jar"></file>
+        <file name="log4j-1.2.8.jar"></file>
+        <file name="mockito-all-1.10.19.jar"></file>
+        <file name="opentest4j-1.1.1.jar"></file>
+        <file name="serializer-2.7.1.jar"></file>
+        <file name="stax-api-1.0.1.jar"></file>
+        <file name="xalan-2.7.1.jar"></file>
+        <file name="xml-apis-1.3.04.jar"></file>
+        <file name="xmlbeans-2.6.0.jar"></file>
+        <file name="xmlsec-1.3.0.jar"></file>
+      </directory>
+    </directory>
+    <directory name="example">
+      <directory name="payment">
+        <file name="sepa_test.xml"></file>
+      </directory>
+      <directory name="receipt">
+        <file name="0_test_fdl"></file>
+        <file name="1_test_fdl"></file>
+        <file name="mov_account_1"></file>
+        <file name="mov_account_2"></file>
+        <file name="no_mov_account_1"></file>
+        <file name="no_mov_account_2"></file>
+      </directory>
+    </directory>
+    <file name="firebase.json"></file>
+    <file name="firestore.indexes.json"></file>
+    <file name="firestore.rules"></file>
+    <file name="package.json"></file>
+    <directory name="src">
+      <directory name="ebics">
+        <file name="ebics.ts"></file>
+      </directory>
+      <directory name="environment">
+        <file name="env.template.ts"></file>
+        <file name="env.ts"></file>
+      </directory>
+      <directory name="firestore">
+        <file name="firestore.ts"></file>
+      </directory>
+      <directory name="ftps">
+        <file name="ftps.ts"></file>
+      </directory>
+      <directory name="payment">
+        <file name="index.ts"></file>
+        <file name="payment.ts"></file>
+      </directory>
+      <directory name="quorum">
+        <file name="movie2.sol"></file>
+        <file name="quorum.ts"></file>
+      </directory>
+      <directory name="receipt">
+        <file name="index.ts"></file>
+        <file name="receipt.ts"></file>
+      </directory>
+      <directory name="storage">
+        <file name="storage.ts"></file>
+      </directory>
+      <directory name="utils">
+        <file name="utils.ts"></file>
+      </directory>
+    </directory>
+    <directory name="tmp">
+      <directory name="payment">
+      </directory>
+      <directory name="receipt">
+      </directory>
+    </directory>
+    <file name="tsconfig.json"></file>
+    <file name="vcs.xml"></file>
+  </directory>
+  <report>
+    <directories>29</directories>
+    <files>62</files>
+  </report>
+</tree>
