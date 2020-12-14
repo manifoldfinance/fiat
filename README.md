@@ -114,4 +114,4 @@ export function mergeBankAccounts(bankAccounts: BankAccount[]) {
 
 ## License
 
-Apache-2.0
+SEE `LICENSE`
