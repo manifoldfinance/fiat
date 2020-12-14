@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@as2network/banking-gateway",
+  "name": "@manifold/banking-gateway",
   "version": "1.0.0",
   "description": "fintech services",
   "main": "index.js",
