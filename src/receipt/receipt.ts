@@ -17,7 +17,7 @@ export interface Movement {
 }
 
 export interface BankAccount {
-  account: string
+  account: string;
   balance: number;
   lastUpdate: Date;
   movements: Movement[];
@@ -25,10 +25,10 @@ export interface BankAccount {
 
 export interface ExpectedPayment {
   invoiceId: string;
-  fromParty: string, // name
+  fromParty: string; // name
   // toAccount: string, // bank account number
-  amount: number, // the amount
-  ref: string, // some reference string
+  amount: number; // the amount
+  ref: string; // some reference string
   // contractAddress: string, // movie smart-contract
   // stakeholdersPrivateFor: string[], // privateFor list
 }
@@ -40,10 +40,11 @@ export interface ExpectedPayment {
  * @example const date = parseDate('270120'); // Date 2020-01-27T00:00:00.000Z
  */
 function parseDate(dateDDMMYY: string) {
-
   // assert parameter length
   if (dateDDMMYY.length !== 6) {
-    throw new Error('Invalid date : date must be in the format DDMMYY and composed only of 6 numbers!');
+    throw new Error(
+      "Invalid date : date must be in the format DDMMYY and composed only of 6 numbers!"
+    );
   }
 
   // split string into date parts
@@ -63,7 +64,9 @@ function parseDate(dateDDMMYY: string) {
 
   // assert that the date is valid
   if (Number.isNaN(timestamp)) {
-    throw new Error(`Invalid date : ${century}${decade}-${month}-${day} cannot be converted into a valid date!`);
+    throw new Error(
+      `Invalid date : ${century}${decade}-${month}-${day} cannot be converted into a valid date!`
+    );
   }
 
   // build an return date object
@@ -77,12 +80,13 @@ function parseDate(dateDDMMYY: string) {
  * @param numberOfDecimalDigits : a string representing the number of decimal digits of the `rawAmount` parameter
  * @example const amount = parseAmount('1234Q', '2'); // -123.48
  */
-function parseAmount(rawAmount: string, numberOfDecimalDigits:string) {
-
+function parseAmount(rawAmount: string, numberOfDecimalDigits: string) {
   // assert numberOfDecimalDigits parameter
   const decimals = Number.parseInt(numberOfDecimalDigits);
   if (Number.isNaN(decimals)) {
-    throw new Error(`Invalid number of decimals : ${numberOfDecimalDigits} cannot be parsed into a number!`);
+    throw new Error(
+      `Invalid number of decimals : ${numberOfDecimalDigits} cannot be parsed into a number!`
+    );
   }
 
   // split rawAmount between integer part and decimal part
@@ -93,7 +97,9 @@ function parseAmount(rawAmount: string, numberOfDecimalDigits:string) {
   // assert integer part
   const integerCheck = Number.parseInt(integerPart);
   if (Number.isNaN(integerCheck)) {
-    throw new Error(`Invalid Amount : Integer part of the amount (${integerPart}) cannot be parsed into a number!`);
+    throw new Error(
+      `Invalid Amount : Integer part of the amount (${integerPart}) cannot be parsed into a number!`
+    );
   }
 
   // split decimal part between digits and decimal code
@@ -103,46 +109,114 @@ function parseAmount(rawAmount: string, numberOfDecimalDigits:string) {
   // assert decimal digits
   const decimalNumbersCheck = Number.parseInt(decimalNumbers);
   if (Number.isNaN(decimalNumbersCheck)) {
-    throw new Error(`Invalid Amount : Decimals part of the amount (${decimalPart}) cannot be parsed into a number!`);
+    throw new Error(
+      `Invalid Amount : Decimals part of the amount (${decimalPart}) cannot be parsed into a number!`
+    );
   }
 
   // parse decimal code as defined in the spec
   let lastDecimal = 0;
   let isPositive = true;
   switch (decimalCode) {
-    case '{': isPositive = true; lastDecimal = 0; break;
-    case 'A': isPositive = true; lastDecimal = 1; break;
-    case 'B': isPositive = true; lastDecimal = 2; break;
-    case 'C': isPositive = true; lastDecimal = 3; break;
-    case 'D': isPositive = true; lastDecimal = 4; break;
-    case 'E': isPositive = true; lastDecimal = 5; break;
-    case 'F': isPositive = true; lastDecimal = 6; break;
-    case 'G': isPositive = true; lastDecimal = 7; break;
-    case 'H': isPositive = true; lastDecimal = 8; break;
-    case 'I': isPositive = true; lastDecimal = 9; break;
+    case "{":
+      isPositive = true;
+      lastDecimal = 0;
+      break;
+    case "A":
+      isPositive = true;
+      lastDecimal = 1;
+      break;
+    case "B":
+      isPositive = true;
+      lastDecimal = 2;
+      break;
+    case "C":
+      isPositive = true;
+      lastDecimal = 3;
+      break;
+    case "D":
+      isPositive = true;
+      lastDecimal = 4;
+      break;
+    case "E":
+      isPositive = true;
+      lastDecimal = 5;
+      break;
+    case "F":
+      isPositive = true;
+      lastDecimal = 6;
+      break;
+    case "G":
+      isPositive = true;
+      lastDecimal = 7;
+      break;
+    case "H":
+      isPositive = true;
+      lastDecimal = 8;
+      break;
+    case "I":
+      isPositive = true;
+      lastDecimal = 9;
+      break;
 
-    case '}': isPositive = false; lastDecimal = 0; break;
-    case 'J': isPositive = false; lastDecimal = 1; break;
-    case 'K': isPositive = false; lastDecimal = 2; break;
-    case 'L': isPositive = false; lastDecimal = 3; break;
-    case 'M': isPositive = false; lastDecimal = 4; break;
-    case 'N': isPositive = false; lastDecimal = 5; break;
-    case 'O': isPositive = false; lastDecimal = 6; break;
-    case 'P': isPositive = false; lastDecimal = 7; break;
-    case 'Q': isPositive = false; lastDecimal = 8; break;
-    case 'R': isPositive = false; lastDecimal = 9; break;
+    case "}":
+      isPositive = false;
+      lastDecimal = 0;
+      break;
+    case "J":
+      isPositive = false;
+      lastDecimal = 1;
+      break;
+    case "K":
+      isPositive = false;
+      lastDecimal = 2;
+      break;
+    case "L":
+      isPositive = false;
+      lastDecimal = 3;
+      break;
+    case "M":
+      isPositive = false;
+      lastDecimal = 4;
+      break;
+    case "N":
+      isPositive = false;
+      lastDecimal = 5;
+      break;
+    case "O":
+      isPositive = false;
+      lastDecimal = 6;
+      break;
+    case "P":
+      isPositive = false;
+      lastDecimal = 7;
+      break;
+    case "Q":
+      isPositive = false;
+      lastDecimal = 8;
+      break;
+    case "R":
+      isPositive = false;
+      lastDecimal = 9;
+      break;
 
     default:
-      throw new Error(`Invalid Decimal Code : ${decimalCode} is not a known decimal code, it must be in the range "A"-"R", or "{" or "}"!`);
+      throw new Error(
+        `Invalid Decimal Code : ${decimalCode} is not a known decimal code, it must be in the range "A"-"R", or "{" or "}"!`
+      );
   }
 
   // construct the final amount as a string
-  const amount = `${isPositive ? '' : '-'}${integerPart}.${decimalNumbers}${lastDecimal}`;
+  const amount = `${
+    isPositive ? "" : "-"
+  }${integerPart}.${decimalNumbers}${lastDecimal}`;
   const numberAmount = Number.parseFloat(amount); // parse the string into a float
 
   // final assert
-  if(Number.isNaN(numberAmount)) {
-    throw new Error(`Invalid Amount : ${amount} could not be parsed into a number!`);
+  if (Number.isNaN(numberAmount)) {
+    throw new Error(
+      `Invalid Amount : ${amount} could not be parsed into a number!`
+    );
   }
 
   return numberAmount;
@@ -154,7 +228,6 @@ function parseAmount(rawAmount: string, numberOfDecimalDigits:string) {
  * @param line a string of 120 chars in the CFONB 120 format
  */
 function parseBalanceRecord(line: string): Balance {
-
   // get record's field according to the spec
   const bankCode = line.substr(2, 5);
   const reservedArea0 = line.substr(7, 4);
@@ -170,13 +243,13 @@ function parseBalanceRecord(line: string): Balance {
   const reservedArea4 = line.substr(104, 16);
 
   const amount = parseAmount(rawAmount, numberOfDecimalDigits);
-  const rib = getRIB(bankCode, counterCode, account)
+  const rib = getRIB(bankCode, counterCode, account);
 
   return {
     account: rib,
     date,
     amount,
-  }
+  };
 }
 
 /**
@@ -185,7 +258,6 @@ function parseBalanceRecord(line: string): Balance {
  * @param line a string of 120 chars in the CFONB 120 format
  */
 function parseMovementRecord(line: string): Movement {
-
   // get record's field according to the spec
   const bankCode = line.substr(2, 5);
   const internalOperationCode = line.substr(7, 4);
@@ -194,7 +266,9 @@ function parseMovementRecord(line: string): Movement {
   const numberOfDecimalDigits = line.substr(19, 1);
   const reservedArea0 = line.substr(20, 1);
   const account = line.substr(21, 11);
-  const interBankOperationCode = parseInterBankOperationCode(line.substr(32, 2));
+  const interBankOperationCode = parseInterBankOperationCode(
+    line.substr(32, 2)
+  );
   const dateOfAccounting = parseDate(line.substr(34, 6));
   const rejectionCode = line.substr(40, 2);
   const dateOfValue = parseDate(line.substr(42, 6));
@@ -208,11 +282,16 @@ function parseMovementRecord(line: string): Movement {
 
   const rib = getRIB(bankCode, counterCode, account);
 
-  const isCredit = (Math.sign(amount) === 1 || Math.sign(amount) === 0)
-  if (interBankOperationCode.isCredit !== undefined && interBankOperationCode.isCredit !== isCredit) {
-    throw new Error(`Incoherent Record : the sign of the movement's amount doesn't match the operation type (i.e. you can't receive a negative amount or send a positive amount) !`);
+  const isCredit = Math.sign(amount) === 1 || Math.sign(amount) === 0;
+  if (
+    interBankOperationCode.isCredit !== undefined &&
+    interBankOperationCode.isCredit !== isCredit
+  ) {
+    throw new Error(
+      `Incoherent Record : the sign of the movement's amount doesn't match the operation type (i.e. you can't receive a negative amount or send a positive amount) !`
+    );
   }
-  
+
   return {
     // otherPartyRIB: rib,
     otherPartyName: label,
@@ -220,7 +299,7 @@ function parseMovementRecord(line: string): Movement {
     isCredit,
     date: dateOfAccounting,
     type: interBankOperationCode.type,
-    refs: [reference]
+    refs: [reference],
   };
 }
 
@@ -244,10 +323,12 @@ function parseComplementaryMovementRecord(line: string) {
  * @param oldAmount a number representing the old balance of the account
  */
 function assertBalances(bankAccount: BankAccount, oldAmount: number) {
-  bankAccount.movements.forEach(credit => oldAmount += credit.amount);
+  bankAccount.movements.forEach((credit) => (oldAmount += credit.amount));
 
   if (oldAmount !== bankAccount.balance) {
-    throw new Error('Invalid Receipt : (oldBalance + credits - debits) is not equal to the new balance!');
+    throw new Error(
+      "Invalid Receipt : (oldBalance + credits - debits) is not equal to the new balance!"
+    );
   }
 }
 
@@ -257,26 +338,31 @@ function assertBalances(bankAccount: BankAccount, oldAmount: number) {
  * @param receipt an utf8 string representing the raw content of a CFONB 120 receipt
  */
 export function parseBankReceipt(receipt: string): BankAccount {
-
   // split the file into records (lines) and only keep the valid records (must be 120 chars long)
-  const rawLines = receipt.split('\n');
-  const lines = rawLines.filter(line => line.length === 120);
+  const rawLines = receipt.split("\n");
+  const lines = rawLines.filter((line) => line.length === 120);
 
   // assert that the receipt start with an "old balance" record and ends with a "new balance" one
-  if (lines[0].substr(0, 2) !== '01') {
-    throw new Error('Invalid Record : Receipt file must start with an "Old Balance" record (01)!');
+  if (lines[0].substr(0, 2) !== "01") {
+    throw new Error(
+      'Invalid Record : Receipt file must start with an "Old Balance" record (01)!'
+    );
   }
-  if (lines[lines.length - 1].substr(0, 2) !== '07') {
-    throw new Error('Invalid Record : Receipt file must end with an "New Balance" record (07)!');
+  if (lines[lines.length - 1].substr(0, 2) !== "07") {
+    throw new Error(
+      'Invalid Record : Receipt file must end with an "New Balance" record (07)!'
+    );
   }
 
   // parse the old and new balance records
   const oldBalance = parseBalanceRecord(lines[0]);
-  const newBalance = parseBalanceRecord(lines[lines.length -1]);
+  const newBalance = parseBalanceRecord(lines[lines.length - 1]);
 
   // assert that the old and new balance records refers to the same account
   if (oldBalance.account !== newBalance.account) {
-    throw new Error('Invalid Receipt : The "Old Balance" record and the "New Balance" record must refer to the same account!');
+    throw new Error(
+      'Invalid Receipt : The "Old Balance" record and the "New Balance" record must refer to the same account!'
+    );
   }
 
   // save the old balance for later balances check
@@ -287,8 +373,8 @@ export function parseBankReceipt(receipt: string): BankAccount {
     account: newBalance.account,
     balance: newBalance.amount,
     lastUpdate: newBalance.date,
-    movements: []
-  }
+    movements: [],
+  };
 
   // if no movements assert balances and return
   if (lines.length === 2) {
@@ -296,20 +382,22 @@ export function parseBankReceipt(receipt: string): BankAccount {
     return bankAccount;
   }
 
-
   // if the file has some movement records the iterate over them (and their complementary records)
   // a "movement" record (04) is followed by [0-n] "complementary movement info" record (05)
 
   // avoid the first and last records that are already parsed by the above code
-  for (let i = 1 ; i < lines.length - 1 ; i++) {
-    if (lines[i].substr(0, 2) !== '04') {
-      throw new Error(`Unexpected Record : The current record was expected to be a "Movement" record (04), but it was a (${lines[i].substr(0, 2)}) record!`);
+  for (let i = 1; i < lines.length - 1; i++) {
+    if (lines[i].substr(0, 2) !== "04") {
+      throw new Error(
+        `Unexpected Record : The current record was expected to be a "Movement" record (04), but it was a (${lines[
+          i
+        ].substr(0, 2)}) record!`
+      );
     } else {
-
       // parse the current movement record into a Movement object
       const movIndex = i;
       const movement = parseMovementRecord(lines[i]);
-      
+
       // save the control data of the record, every following complementary record must match this data
       const control = lines[i].substr(2, 40);
 
@@ -317,14 +405,15 @@ export function parseBankReceipt(receipt: string): BankAccount {
       i++;
 
       // iterate over every potential complementary records
-      while(lines[i].substr(0, 2) === '05') {
-
+      while (lines[i].substr(0, 2) === "05") {
         // check that the complementary record match the previously saved control data
         if (lines[i].substr(2, 40) !== control) {
           console.log(control, `at line ${movIndex}`);
-          console.log('should be equal to');
+          console.log("should be equal to");
           console.log(lines[i].substr(2, 40), `at line ${i}`);
-          throw new Error(`Incoherent Records : The "Complementary Information" record (#${i}) doesn\'t match the previous "Movement" record (#${movIndex})!`)
+          throw new Error(
+            `Incoherent Records : The "Complementary Information" record (#${i}) doesn\'t match the previous "Movement" record (#${movIndex})!`
+          );
         }
 
         // parse the complementary record
@@ -351,17 +440,16 @@ export function parseBankReceipt(receipt: string): BankAccount {
 }
 
 export function parseBankFile(content: string) {
-
   // split the file into records (lines) and only keep the valid records (must be 120 chars long)
-  const rawLines = content.split('\n');
-  const lines = rawLines.filter(line => line.length === 120);
+  const rawLines = content.split("\n");
+  const lines = rawLines.filter((line) => line.length === 120);
 
   const receipts: string[][] = [[]];
   let currentReceipt = 0;
 
-  lines.forEach(line => {
+  lines.forEach((line) => {
     receipts[currentReceipt].push(line);
-    if (line.substr(0, 2) === '07') {
+    if (line.substr(0, 2) === "07") {
       receipts.push([]); // add a new array for the next receipt, (if it was the last, we will need to pop it)
       currentReceipt++;
     }
@@ -369,7 +457,7 @@ export function parseBankFile(content: string) {
 
   receipts.pop(); // remove the extra array
 
-  return receipts.map(receipt => receipt.join('\n'));
+  return receipts.map((receipt) => receipt.join("\n"));
 }
 
 /**
@@ -384,12 +472,11 @@ export function parseBankFile(content: string) {
  * //  'account_A': [account_A_0, account_A_1],
  * //  'account_B': [account_B_0, account_B_1],
  * // }
-*/
+ */
 export function splitBankAccounts(bankAccounts: BankAccount[]) {
-
   const result: Record<string, BankAccount[]> = {};
 
-  bankAccounts.forEach(bankAccount => {
+  bankAccounts.forEach((bankAccount) => {
     if (!result[bankAccount.account]) {
       result[bankAccount.account] = [bankAccount];
     } else {
@@ -415,12 +502,13 @@ export function splitBankAccounts(bankAccounts: BankAccount[]) {
  * // }
  */
 export function mergeBankAccounts(bankAccounts: BankAccount[]) {
-
   // assert that every account from the params refer to the same account number
   const accountNumber = bankAccounts[0].account;
-  bankAccounts.forEach(bankAccount => {
+  bankAccounts.forEach((bankAccount) => {
     if (bankAccount.account !== accountNumber) {
-      throw new Error(`Unexpected Account : You are trying to merge bank account from different account number, try to split before merging!`);
+      throw new Error(
+        `Unexpected Account : You are trying to merge bank account from different account number, try to split before merging!`
+      );
     }
   });
 
@@ -438,19 +526,25 @@ export function mergeBankAccounts(bankAccounts: BankAccount[]) {
   return result;
 }
 
-
 // ! THIS IS A CRITICAL FUNCTION, BE SURE TO BATTLE TEST IT IN REAL (but closed) PROD ENVIRONNEMENT
 /**
  * Matching function that try to see if an expected payment correspond to an incoming payment
  */
-export function matchPayment(expectedPayment: ExpectedPayment, incomingPayment: Movement) {
+export function matchPayment(
+  expectedPayment: ExpectedPayment,
+  incomingPayment: Movement
+) {
   const isCredit = incomingPayment.isCredit;
   const amountMatch = incomingPayment.amount === expectedPayment.amount;
-  const partyMatch = incomingPayment.otherPartyName.includes(expectedPayment.fromParty);
-  const refMatch = incomingPayment.refs.some(ref => ref.includes(expectedPayment.ref));
+  const partyMatch = incomingPayment.otherPartyName.includes(
+    expectedPayment.fromParty
+  );
+  const refMatch = incomingPayment.refs.some((ref) =>
+    ref.includes(expectedPayment.ref)
+  );
 
   console.log(isCredit, amountMatch, partyMatch, refMatch);
-  
+
   if (isCredit && amountMatch && partyMatch && refMatch) {
     return true;
   }
